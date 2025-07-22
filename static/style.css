@@ -1,119 +1,107 @@
-/* General reset */
-* {
+/* style.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body styling */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f7fa;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    min-height: 100vh;
+    color: #333;
 }
 
-/* Container styling */
 .container {
-    background-color: #fff;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 90%;
     max-width: 600px;
 }
 
-/* Heading styling */
 h2 {
     text-align: center;
-    font-size: 2rem;
-    color: #333;
-    margin-bottom: 20px;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 28px;
 }
 
-/* Form group styling */
 .form-group {
     margin-bottom: 20px;
 }
 
-/* Label styling */
 label {
-    font-size: 1rem;
-    color: #555;
     display: block;
     margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
 }
 
-/* Input and select field styling */
-input[type="number"], select {
+input[type="number"],
+select {
     width: 100%;
     padding: 12px;
-    font-size: 1rem;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
 }
 
-input[type="number"]:focus, select:focus {
-    border-color: #0056b3;
+input[type="number"]:focus,
+select:focus {
+    border-color: #3498db;
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
 }
 
-/* Button styling */
 button {
-    width: 100%;
-    padding: 14px;
-    background-color: #0056b3;
-    color: #fff;
+    background-color: #3498db;
+    color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #004494;
+    background-color: #2980b9;
 }
 
-/* Result section styling */
 .result {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 1.2rem;
+    margin-top: 25px;
     padding: 15px;
-    border-radius: 6px;
-    background-color: #e8f5e9;
-    color: #388e3c;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
 }
 
 .result p {
-    font-weight: bold;
+    margin: 0;
+    font-size: 18px;
 }
 
-.result p.cancel {
-    color: #d32f2f;
+/* Different colors for prediction results */
+.result p[data-prediction="0"] {
+    color: #e74c3c;
 }
 
-.result p.not-cancel {
-    color: #388e3c;
+.result p[data-prediction="1"] {
+    color: #2ecc71;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
+/* Responsive adjustments */
+@media (max-width: 480px) {
     .container {
         padding: 20px;
     }
-
+    
     h2 {
-        font-size: 1.8rem;
-    }
-
-    button {
-        padding: 12px;
+        font-size: 24px;
     }
 }
